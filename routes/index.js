@@ -1,9 +1,7 @@
-var express = require('express');
-var router = express.Router();
+import express from 'express';
+const rootRouter = express.Router();
+import booksRouter from './books';
 
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+rootRouter.use('/books', booksRouter);
 
-module.exports = router;
+export default rootRouter;
